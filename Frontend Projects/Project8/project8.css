@@ -1,0 +1,45 @@
+body {
+    display: flex;
+    flex-direction: row;
+    background-color: whitesmoke;
+}
+
+form {
+    margin-left: 5vw;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+input{
+    width:40vw;
+    height: 30px;
+    border:hidden;
+    border-radius: 5px;
+    box-shadow: 2px 2px lightgray;
+    background-color: white;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+input[type=submit]{
+    background: linear-gradient(to bottom, #71ace3, #3e6da6);
+    color: whitesmoke;
+    font-weight: bold;
+    font-size: smaller;
+}
+
+h1 {
+    margin-left: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.left-side {
+background: linear-gradient(to bottom, #71ace3, #3e6da6);
+width: 50%;
+height: 100vh;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+

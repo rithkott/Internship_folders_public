@@ -1,0 +1,45 @@
+{
+    "openAI": {
+        "maxTokens": 1500,
+        "modelName": "gpt-3.5-turbo",
+        "openAIAPIkey": "",
+        "temperature": 0
+        },
+    "level1": [
+        {
+        "name": "Priority",
+        "type": "string",
+        "classesRequired": "High,Medium,Low",
+        "description": "Priority is determined based on the importance and urgency of the request.",
+        "inputNodes": ["openAI"]
+        },
+        {
+        "name": "Category",
+        "type": "string",
+        "classesRequired": "Technical,Financial,Operational",
+        "description": "The category defines the main subject of the email, whether it's related to technical issues, financial matters, or operational tasks.",
+        "inputNodes": ["openAI"]
+        }
+    ],
+    
+    "level2": [
+        {
+        "classifierType": "Category",
+        "if": "Technical",
+        "type": "string",
+        "classesRequired": "Bug Report,Feature Request,General Inquiry",
+        "name": "SubCategory",
+        "description": "Bug Report: Emails that report critical software or system bugs, including error messages, system failures, and malfunctions. Common phrases may include 'critical bug', 'system failure', 'error message', 'unable to complete', 'urgent issue', 'please fix', 'attached error logs', 'payment gateway connection timeout'.Feature Request: Emails that propose new features, enhancements, or improvements to existing systems or applications. General Inquiry: Emails that ask general technical questions, seek assistance, or request information about products, services, or technical matters.",
+        "inputNodes": ["openAI", "Category"]
+        },
+        {
+        "classifierType": "Category",
+        "if": "Financial",
+        "type": "string",
+        "classesRequired": "Invoice,Payment,Refund",
+        "name": "SubCategory",
+        "description": "Financial emails may concern invoices, payments, or refunds.",
+        "inputNodes": ["openAI", "Category"]
+        }
+    ]
+}

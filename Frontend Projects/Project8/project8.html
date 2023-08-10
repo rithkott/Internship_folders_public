@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="project8.css">
+        <script>
+            function formValidator(){
+                let username = document.forms["login"]["username"].value;
+                let password = document.forms["login"]["password"].value;
+                if (username == "username" && password == "password"){
+                    return True 
+                }
+                else{
+                    alert("Incorrect Login Credentials")
+                    return False
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div class="left-side">
+            <img src="C:\Users\rithvikk\Pictures\Screenshots\logo.png" id="logo" width="80%" height="80%">
+        </div>
+        <form id="login" onsubmit="return formValidator()" method="post">
+            <br>
+            <p>Username:</p>
+            <input type="text" id="username" name="username"><br>
+            <p>Password:</p>
+            <input type="password" id="password" name="password"><br>
+            <br>
+            <input type="submit" value="Initialize Session">
+        </form>
+    </body>
+</html>

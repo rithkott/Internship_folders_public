@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="mystylesheet1.css">
+    <script>
+        function formValidator(){
+            let username = document.forms["login"]["username"].value;
+            let password = document.forms["login"]["password"].value;
+            if (username == "username" && password == "password"){
+                location.href = "C:\Users\rithvikk\Documents\Projects\project2_2.htmll"
+                return True 
+            }
+            else{
+                alert("Incorrect Login Credentials")
+                return False
+            }
+        }
+    </script>
+    <h1>
+        Login Page
+    </h1>
+    <body>
+        <form id="login" onsubmit="return formValidator()" method="post">
+            <br>
+            Username:
+            <input type="text" id="username" name="username"><br>
+            Password:
+            <input type="password" id="password" name="password"><br>
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+    </body>
+</html>

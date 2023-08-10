@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="mystylesheet3.css">
+    <script>
+        function checkForm(){
+            let name = document.forms["survey"]["name"].value
+            let email = document.forms["survey"]["email"].value
+            let age = document.forms["survey"]["age"].value
+            let role = document.forms["survey"]["role"].value
+            let gender = document.forms["survey"]["gender"]
+            var surveyValid = true
+            if (name == ''){
+                alert("Enter Name")
+                surveyValid = false
+                return surveyValid
+            }
+            if (email == ''){
+                alert("Enter Email")
+                surveyValid = false
+                return surveyValid
+            }
+            if (isNaN(age) || age == ''){
+                alert()
+                surveyValid = false
+                return surveyValid
+            }
+            if (role == ''){
+                alert("Enter Role")
+                surveyValid = false
+                return surveyValid
+            }
+            for (const option of gender){
+                if (option.checked){
+                    break
+                }
+                alert("Please Select a Gender")
+                return False
+            };
+            window.location.href = "Project3\project3_1.html";
+            return surveyValid;
+        }
+    </script>
+    <h1>
+        Survey Form
+    </h1>
+    <body>
+        <form id="survey" onsubmit="checkForm()">
+            <p>Name: </p>
+            <input type="text"- id="name" placeholder="Enter Full Name...">
+            <p>Email: </p>
+            <input type="text" id="email" placeholder="Enter Email Address...">
+            <p>Age: </p>
+            <input type="text" id="age" placeholder="Enter Age...">
+            <p>Role: </p>
+            <input type="text" id="role" placeholder="Enter Role...">
+            <p>Gender: </p>
+            <input type="radio" id="gender" value="Male">Male<br>
+            <input type="radio" id="gender" value="Female">Female<br>
+            <input type="radio" id="gender" value="Other">Other<br>
+            <p>Experience: </p>
+            <input type="checkbox" id="experience" value="HTML">HTML<br>
+            <input type="checkbox" id="experience" value="CSS">CSS<br>
+            <input type="checkbox" id="experience" value="JavaScript">JavaScript<br>
+            <input type="checkbox" id="experience" value="Python">Python<br>
+            <input type="checkbox" id="experience" value="C++">C++<br>
+            <p>Comments: </p>
+            <input type="text" placeholder="Enter Comments here..." id="comments"><br>
+            <input type="submit" id="submit" value="Submit">
+        </form>
+    </body>
+</html>
